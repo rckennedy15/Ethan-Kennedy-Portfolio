@@ -13,5 +13,9 @@
   "devDependencies": {
     "bulma": "^0.9.1",
     "node-sass": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rckennedy15/Ethan-Kennedy-Portfolio.git"
   }
 }
