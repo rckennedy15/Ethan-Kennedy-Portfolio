@@ -7,41 +7,59 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ethan Kennedy Design</title>
 
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
-  <h1 class="title">
-    Bulma
-  </h1>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <!-- <a class="navbar-item" href="https://bulma.io">
+        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+      </a> -->
 
-  <p class="subtitle">
-    Modern CSS framework based on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Flexbox</a>
-  </p>
-
-  <div class="field">
-    <div class="control">
-      <input class="input" type="text" placeholder="Input">
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-  </div>
 
-  <div class="field">
-    <p class="control">
-      <span class="select">
-        <select>
-          <option>Select dropdown</option>
-        </select>
-      </span>
-    </p>
-  </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item">
+          Home
+        </a>
 
-  <div class="buttons">
-    <a class="button is-primary">Primary</a>
-    <a class="button is-link">Link</a>
-  </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            About
+          </a>
 
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              CV
+            </a>
+          </div>
+        </div>
+        <a class="navbar-item">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </nav>
 
-  <a href="#" class="button is-primary">Click Me</a>
+  <section class="home">
+    <img class="home__ethan" src="images/ethan-logo-rough.png" alt="">
+    <h2 class="home__subtitle">a graphic designer</h2>
+    <hr>
+  </section>
+
+  <section class="portfolio"></section>
 
   <!-- JQuery api -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

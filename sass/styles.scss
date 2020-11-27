@@ -1,40 +1,105 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
-// Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
-$brown: #757763;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
+// Brand colors
+$light: #eeeeee;
+$medium: #686d76;
+$dark: #373a40;
+$blue: #19d3da;
+$light-blue: #3DE3E9;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
-$grey-dark: $brown;
-$grey-light: $beige-light;
-$primary: $purple;
-$link: $pink;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
+$grey-dark: $dark;
+$grey-light: $light;
+$primary: $blue;
+$primary-invert: $light;
+$link: $blue;
+$widescreen-enabled: true;
+$fullhd-enabled: true;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
-$control-border-width: 2px;
+$body-background-color: $light;
+// $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-// Import only what you need from Bulma
-// @import "../node_modules/bulma/sass/utilities/_all.sass";
-// @import "../node_modules/bulma/sass/base/_all.sass";
-// @import "../node_modules/bulma/sass/elements/button.sass";
-// @import "../node_modules/bulma/sass/elements/container.sass";
-// @import "../node_modules/bulma/sass/elements/title.sass";
-// @import "../node_modules/bulma/sass/form/_all.sass";
-// @import "../node_modules/bulma/sass/components/navbar.sass";
-// @import "../node_modules/bulma/sass/layout/hero.sass";
-// @import "../node_modules/bulma/sass/layout/section.sass";
-
 //or import it all lmao
 @import "../node_modules/bulma/bulma.sass";
+
+@include until($desktop) {
+  .navbar-menu {
+    display       : block;
+    opacity       : 0;
+
+    position      : absolute; // /* or float: left; width: 100%;*/
+    left          : 0;
+    right         : 0;
+
+    transform     : translateY(-50%);
+    transition    : all .2s ease-in-out;
+    pointer-events: none;
+
+    background    : linear-gradient($light, white);
+    box-shadow    : none;
+  }
+
+  .navbar-menu.is-active {
+    opacity       : 1;
+    transform     : none;
+    pointer-events: auto;
+  }
+}
+
+.navbar {
+  background-color: rgba($light, 0);
+  padding         : 2% 3% 0;
+}
+
+.home {
+  @include until($desktop) {
+    height: 50vh;
+  }
+  height    : 75vh;
+  text-align: center;
+  background: $light;
+
+  img {
+    margin-top: 15vh;
+    max-width : 75vw;
+  }
+
+  h2 {
+    font-family: "Caveat", cursive;
+    font-size  : 3rem;
+  }
+}
+
+.portfolio {
+  /* Prevent vertical gaps */
+  line-height : 0;
+
+  column-count: 5;
+  column-gap  : 0;
+
+  @include until($desktop) {
+    column-count: 2;
+  }
+
+  img {
+    /* Just in case there are inline attributes */
+    width     : 100% !important;
+    height    : auto !important;
+
+    transition: transform .3s ease-in-out;
+
+    &:hover {
+      transform : scale(1.2);
+      box-shadow: 0 0 40px 50px rgba(0, 0, 0, 0.2);
+      position  : relative;
+    }
+  }
+
+}
